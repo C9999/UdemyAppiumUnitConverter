@@ -1,0 +1,10 @@
+# language: pt
+Funcionalidade: As a user i would like to convert my units.
+
+  Cenário: Whem i tap on menu icon, i should see left side menu[90m # features/main_menu.feature:4[0m
+    [32mDado I land on home screen[90m                                  # features/step_definitions/main_mennu_steps.rb:1[0m[0m
+      [36mLanded on home screen![0m
+
+1 scenario ([32m1 passed[0m)
+1 step ([32m1 passed[0m)
+0m0.018s
