@@ -24,15 +24,17 @@ When(/^I press on Clear button$/) do
 end
 
 Then(/^I type "([^"]*)" to target text field$/) do |target_value|
-  find_element(xpath: "//android.widget.Button[@text='#{target_value}']").click()
+  sleep 2
+  buttons = target_value.split("")
 
-
-
+  buttons.each do |button|
+    find_element(id: "keypad").find_element(xpath: "//android.widget.Button[@text='#{button}']").click() #find_element(xpath: "//android.widget.Button[@text='#{target_value}']").click()
+  end
 end
 
 When(/^I should see result as "([^"]*)"$/) do |result|
   actual_result = find_element(id: "target_value").text()
-  fail 'Incorrect conversion result' if result != actual_result
+  fail 'Expecting value to be #{result}, acutal result #{actual_text}' if result != actual_result
 end
 
 When(/^I press on Add to favorites icon$/) do
