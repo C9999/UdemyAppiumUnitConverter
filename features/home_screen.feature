@@ -1,5 +1,5 @@
 # language: en
-Feature: Tests gor Home screen funcionality
+Feature: Tests for Home screen funcionality
 
   Scenario: Default values on Home screen is Foot and Centimeter
     Given I land on home screen
@@ -13,8 +13,8 @@ Feature: Tests gor Home screen funcionality
       When I press on Clear button
       Then Show All button should be disabled
 
-    @units_conversion
-    Scenario Outline: Verify default conserion
+    @conversao
+    Scenario Outline: Verify default converion
       Given I land on home screen
       Then I type "<target>" to target text field
       When I should see result as "<result>"
@@ -24,7 +24,7 @@ Feature: Tests gor Home screen funcionality
     | 2      | 60.96  |
     | 10     | 304.80 |
 
-  @fav
+  @favoritos
   Scenario: User to add current conversions to Favorite list
       Given I land on home screen
       When I press on Add to favorites icon

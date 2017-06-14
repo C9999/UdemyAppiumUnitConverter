@@ -1,6 +1,6 @@
 # language: en
 Feature: User able to create new custom conversion
-  @pow
+  @power
   Scenario: User able to create new custom conversion
     Given I land on home screen
     When I press on Menu icon

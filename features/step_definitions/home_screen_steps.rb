@@ -24,11 +24,15 @@ When(/^I press on Clear button$/) do
 end
 
 Then(/^I type "([^"]*)" to target text field$/) do |target_value|
-  puts target_value
+  find_element(xpath: "//android.widget.Button[@text='#{target_value}']").click()
+
+
+
 end
 
 When(/^I should see result as "([^"]*)"$/) do |result|
-  puts result
+  actual_result = find_element(id: "target_value").text()
+  fail 'Incorrect conversion result' if result != actual_result
 end
 
 When(/^I press on Add to favorites icon$/) do
@@ -42,6 +46,4 @@ end
 Then(/^I verify "([^"]*)" added to Favorite Conversions screen$/) do |unit_type|
   find_element(id: "action_bar").find_element(xpath: "//android.widget.TextView[@text='Favorite conversions']")
   find_element(id: "favorites_single_line").find_element(xpath: "//android.widget.TextView[@text='Length']")
-  puts "FAV !!!"
-
 end

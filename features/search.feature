@@ -1,6 +1,6 @@
 # language: en
 Feature: As a User i would like to perform search
-  @sea
+  @busca
   Scenario: User able to search by existing unit conversion
     Given I land on home screen
     Then I press on Search icon
