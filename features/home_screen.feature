@@ -7,21 +7,24 @@ Feature: Tests for Home screen funcionality
     And Right Unit picker value should be "Centimeter"
     Then Left Unit picker value should be "Inch"
 
-    Scenario: Show All button should be enabled at launch
+    @habilitado
+    Scenario: Show All button should be disabled at launch
       Given I land on home screen
-      Then Show All button should be enabled
-      When I press on Clear button
       Then Show All button should be disabled
+      When I type "1" in application keyboard
+      Then Show All button should be enabled
+      #When I press on Clear button
+
 
     @conversao
     Scenario Outline: Verify default converion
       Given I land on home screen
-      Then I type "<target>" to target text field
+      Then I type "<target>" in application keyboard
       When I should see result as "<result>"
     Examples:
     | target | result |
-    # | 1      | 30.48  |
-    # | 2      | 60.96  |
+    | 1      | 30.48  |
+    | 2      | 60.96  |
     | 10     | 304.8  |
 
   @favoritos
