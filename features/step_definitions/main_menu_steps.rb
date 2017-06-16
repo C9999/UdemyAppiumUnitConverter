@@ -18,3 +18,9 @@ Then(/^I land on My Conversions screen$/) do
   teste = find_element(id: "action_bar").find_element(xpath: "//android.widget.TextView[@text='My conversions']")
   expect(teste.text).to eq("My conversions")
 end
+
+Then(/^I select "([^"]*)" unit$/) do |unit_name|
+  sleep 2
+
+  find_element(xpath: "//android.widget.TextView[@text='#{unit_name}']").click()
+end
