@@ -1,4 +1,5 @@
 # language: en
+@main_menu
 Feature: As a user i would like to convert my units.
   @menu
   Scenario: Whem i tap on menu icon, i should see lef t side menu

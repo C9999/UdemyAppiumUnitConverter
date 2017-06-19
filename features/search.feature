@@ -1,4 +1,5 @@
 # language: en
+@search
 Feature: As a User i would like to perform search
   @busca
   Scenario: User able to search by existing unit conversion

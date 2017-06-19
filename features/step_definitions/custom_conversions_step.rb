@@ -33,6 +33,5 @@ end
 Then(/^I verify conversion with name "([^"]*)" on My Converions screen$/) do |conversion_name|
   item_tela = find_element(id: "custom_category_item_name")
   expect(item_tela.text).to eq(conversion_name)
-  puts " Aeeeeeeeeeeeeee"
 
 end

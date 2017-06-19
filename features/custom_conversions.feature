@@ -1,4 +1,5 @@
 # language: en
+@custom_conversion
 Feature: User able to create new custom conversion
   @power
   Scenario: User able to create new custom conversion

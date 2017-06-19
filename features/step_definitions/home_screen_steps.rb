@@ -1,5 +1,6 @@
 Then(/^Left Unit picker value should be "([^"]*)"$/) do |value|
   #find_elements usado pois existem 2 elementos com o mesmo nome e por isso buscamos pelo indice
+  sleep 1
   actual_picker_text = find_elements(id: "select_unit_spinner")[0].text()
 
   if value != actual_picker_text
@@ -29,7 +30,7 @@ When(/^I press on Clear button$/) do
 end
 
 When(/^I type "([^"]*)" in application keyboard$/) do |target_value|
-  sleep 2
+  sleep 4
   buttons = target_value.split("")
 
   buttons.each do |button|

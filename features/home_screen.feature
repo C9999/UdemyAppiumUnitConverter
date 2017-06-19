@@ -1,15 +1,18 @@
   # language: en
-  Feature: Tests for Home screen funcionality
+@home_screen
+Feature: Tests for Home screen funcionality
 
-    Scenario: Default values on Home screen is Foot and Centimeter
+    Background:
       Given I land on home screen
+
+    @foot_cens
+    Scenario: Default values on Home screen is Foot and Centimeter
       Then Left Unit picker value should be "Foot"
       And Right Unit picker value should be "Centimeter"
       Then Left Unit picker value should be "Inch"
 
     @habilitado
     Scenario: Show All button should be disabled at launch
-      Given I land on home screen
       Then Show All button should be disabled
       When I type "1" in application keyboard
       Then Show All button should be enabled
@@ -17,7 +20,6 @@
 
     @conversao
     Scenario Outline: Verify default converion
-      Given I land on home screen
       When I type "<target>" in application keyboard
       Then I should see result as "<result>"
     Examples:
@@ -28,7 +30,6 @@
 
     @favoritos
     Scenario: User to add current conversions to Favorite list
-      Given I land on home screen
       When I press on Add to favorites icon
       And I press on Menu icon
       Then I press on Favorite Conversions button
@@ -37,7 +38,6 @@
 
     @inch
     Scenario Outline: User able to select different values from unit pickers
-      Given I land on home screen
       Then I select "<value>" from left unit pocker
       When I type "<target>" in application keyboard
       Then I should see result as "<result>"
@@ -48,7 +48,6 @@
 
     @gallon
     Scenario: User able to convert different unit
-      Given I land on home screen
       When I press on Menu icon
       Then I select "Volume" unit
       Then I select "Gallon U.K." from right unit picker
@@ -57,7 +56,6 @@
 
     @speed
     Scenario: User able to convert Speed values
-      Given I land on home screen
       When I press on Menu icon
       Then I select "Speed" unit
       When I type "1" in application keyboard
@@ -65,7 +63,6 @@
 
     @reverse
     Scenario: User able to reverse picker values button
-      Given I land on home screen
       Then I press on reverse picker values button
       Then Left Unit picker value should be "Centimeter"
       And Right Unit picker value should be "Foot"
