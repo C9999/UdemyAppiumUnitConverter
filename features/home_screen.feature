@@ -54,3 +54,18 @@
       Then I select "Gallon U.K." from right unit picker
       When I type "1" in application keyboard
       Then I should see result as "0.8327"
+
+    @speed
+    Scenario: User able to convert Speed values
+      Given I land on home screen
+      When I press on Menu icon
+      Then I select "Speed" unit
+      When I type "1" in application keyboard
+      Then I should see result as "1.6093"
+
+    @reverse
+    Scenario: User able to reverse picker values button
+      Given I land on home screen
+      Then I press on reverse picker values button
+      Then Left Unit picker value should be "Centimeter"
+      And Right Unit picker value should be "Foot"

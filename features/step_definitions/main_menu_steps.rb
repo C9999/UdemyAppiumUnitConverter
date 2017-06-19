@@ -4,6 +4,7 @@ end
 
 When(/^I press on Menu icon$/) do
   find_element(id: "action_bar").find_element(xpath: "//android.widget.ImageButton[@content-desc='Open navigation drawer']").click
+  sleep 1
 end
 
 Then(/^I Should see left Menu$/) do
@@ -21,6 +22,6 @@ end
 
 Then(/^I select "([^"]*)" unit$/) do |unit_name|
   sleep 2
-
+  find_element_in_list(unit_name)
   find_element(xpath: "//android.widget.TextView[@text='#{unit_name}']").click()
 end

@@ -59,28 +59,16 @@ end
 
 Then(/^I select "([^"]*)" from left unit pocker$/) do |value|
   find_elements(id: "select_unit_spinner")[0].click()
-
-  4.times{
-    Appium::TouchAction.new.swipe(start_x: 0.5, start_y: 0.2, end_x: 0.5, end_y: 0.8, duration: 600).perform
-  }
-
-  until exists{find_element(xpath: "//android.widget.TextView[@text='#{value}']")} do
-    Appium::TouchAction.new.swipe(start_x: 0.5, start_y: 0.7, end_x: 0.5, end_y: 0.2, duration: 800).perform
-  end
-
+  find_element_in_list(value) #erv.rb
   find_element(xpath: "//android.widget.TextView[@text='#{value}']").click()
 end
 
 Then(/^I select "([^"]*)" from right unit picker$/) do |value|
   find_elements(id: "select_unit_spinner")[1].click()
-
-  4.times{
-    Appium::TouchAction.new.swipe(start_x: 0.5, start_y: 0.2, end_x: 0.5, end_y: 0.8, duration: 600).perform
-  }
-
-  until exists{find_element(xpath: "//android.widget.TextView[@text='#{value}']")} do
-    Appium::TouchAction.new.swipe(start_x: 0.5, start_y: 0.7, end_x: 0.5, end_y: 0.2, duration: 800).perform
-  end
-
+  find_element_in_list(value) #erv.rb
   find_element(xpath: "//android.widget.TextView[@text='#{value}']").click()
+end
+
+Then(/^I press on reverse picker values button$/) do
+  find_element(id: "img_switch").click()
 end
