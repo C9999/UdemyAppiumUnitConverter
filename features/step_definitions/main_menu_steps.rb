@@ -25,3 +25,17 @@ Then(/^I select "([^"]*)" unit$/) do |unit_name|
   find_element_in_list(unit_name)
   find_element(xpath: "//android.widget.TextView[@text='#{unit_name}']").click()
 end
+
+When(/^I press on History$/) do
+  find_element(xpath: "//android.widget.TextView[@text='History']").click()
+end
+
+Then(/^I verify "([^"]*)" as (\d+)(?:st|nd|rd|th)? result in history list$/) do |text, index|
+  result = exists{find_element(id: "history_conversion_list").find_element(xpath: "//android.widget.TextView[@text='#{text}']")}
+  fail("Element '#{text}' not found in History list") if result == false
+end
+
+Then(/^I press X to remove (\d+)(?:st|nd|rd|th)? result in history list$/) do |index|
+  index = index.to_i()
+  find_element(id: "history_conversion_list").find_elements(id: "deleteIcon")[index - 1].click()
+end

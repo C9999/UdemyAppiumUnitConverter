@@ -7,3 +7,5 @@ source "https://rubygems.org"
  gem "selenium"
  gem "pry"
  gem "rspec"
+
+gem 'syntax', '1.2.1'

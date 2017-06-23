@@ -1,8 +1,8 @@
 Then(/^Left Unit picker value should be "([^"]*)"$/) do |value|
   #find_elements usado pois existem 2 elementos com o mesmo nome e por isso buscamos pelo indice
-  sleep 1
-  actual_picker_text = find_elements(id: "select_unit_spinner")[0].text()
 
+  actual_picker_text = find_elements(id: "select_unit_spinner")[0].text()
+  sleep 3  
   if value != actual_picker_text
     fail("Expecting Left Unit picker value to be #{value}, actual value is #{actual_picker_text}")
   end

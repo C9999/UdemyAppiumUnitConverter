@@ -16,10 +16,9 @@ After do |scenario|
     $driver.screenshot(screenshot_file)
 
     #embed report file
-    embed("#{screenshot_file}", "image/png")
+    embed("screenshot/#{screenshot_file}", "image/png")
   end
 
-  sleep 5
   $driver.driver_quit
 end
 
