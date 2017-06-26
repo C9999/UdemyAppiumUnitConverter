@@ -1,5 +1,5 @@
   # language: en
-@home_screen
+@home_screen @regression
 Feature: Tests for Home screen funcionality
 
     Background:

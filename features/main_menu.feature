@@ -1,11 +1,11 @@
 # language: en
-@main_menu
+@main_menu @regression
 Feature: As a user i would like to convert my units.
   @menu
   Scenario: Whem i tap on menu icon, i should see lef t side menu
     Given I land on home screen
     When I press on Menu icon
-    Then I Should see left Menu
+    Then I verify "Unit Converter" as current screen
 
   @con
   Scenario: I Should be able to open meu conversion screen
@@ -30,3 +30,10 @@ Feature: As a user i would like to convert my units.
     And I verify "Length" as 1st result in history list
     Then I press X to remove 1st result in history list
     And I should see "No history right now" text
+
+  @set
+  Scenario: User able to open Settings menu
+    Given I land on home screen
+    Then I press on More options button
+    And I press on Settings button
+    Then I verify "Settings" as current screen

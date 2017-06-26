@@ -7,9 +7,9 @@ When(/^I press on Menu icon$/) do
   sleep 1
 end
 
-Then(/^I Should see left Menu$/) do
-  find_element(id: "action_bar").find_element(xpath: "//android.widget.TextView[@text='Unit Converter']")
-end
+# Then(/^I Should see left Menu$/) do
+#   find_element(id: "action_bar").find_element(xpath: "//android.widget.TextView[@text='Unit Converter']")
+# end
 
 When(/^I press My Conversions$/) do
   find_element(id: "target_value_placeholder").click
@@ -38,4 +38,14 @@ end
 Then(/^I press X to remove (\d+)(?:st|nd|rd|th)? result in history list$/) do |index|
   index = index.to_i()
   find_element(id: "history_conversion_list").find_elements(id: "deleteIcon")[index - 1].click()
+end
+
+Then(/^I press on More options button$/) do
+  find_element(id: "More options").click
+  #binding.pry
+end
+
+Then(/^I press on Settings button$/) do
+  sleep 3
+  find_element(xpath: "//android.widget.TextView[@text='Settings']").click()
 end

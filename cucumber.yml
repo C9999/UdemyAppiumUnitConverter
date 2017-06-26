@@ -2,5 +2,7 @@ home_screen_tests: --tags @home_screen --format html --out report.html --format 
 custom_conversion_tests: --tags @custom_conversion --format html --out report.html --format pretty
 main_menu_tests: --tags @main_menu --format html --out report.html --format pretty
 search_tests: --tags @search --format html --out report.html --format pretty
+gestures_tests: --tags @gestures --format html --out report.html --format pretty
 
+all_tests: --tags @regression --format html --out report.hatml --format pretty
 # Arquivo de profile, chamada: cucumber -p search_tests
