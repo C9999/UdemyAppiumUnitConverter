@@ -8,6 +8,7 @@ def caps
         appPackage: "com.ba.universalconverter",
         appActivity: "MainConverterActivity",
         newCommandTimeout: "3600",
+        #fullReset: true, #remover app após suit de testes ser executada
         appium_lib: {
           wait: 0,
           debug: false
